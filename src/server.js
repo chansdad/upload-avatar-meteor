@@ -6,7 +6,7 @@ Meteor.methods({
         }
         try {
             validateImgBase64(base64);
-            return Meteor.users.update({_id: id},
+            return BusinessProfiles.update({userId: id},
                 {$set: {'profile.image': base64, 'profile.upgraded': new Date()}}
             );
         }
